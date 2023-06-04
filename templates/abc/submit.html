@@ -1,0 +1,135 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Submit Karkardagi{% endblock title %}
+
+{% block submit %}
+<section class="submit">
+<div class="container">
+<form method="POST"  action="/submitted/">
+  {% csrf_token %}
+    <div class="form-row ">
+        <div class="form-group margin col-md-12">
+            <label for="name">Your Name</label>
+            <input type="text" class="form-control" name="name" id="name" placeholder="Name">
+        </div>
+        <div class="margin form-group col-md-12">
+          <label for="zimmedari">Your Zimmedari</label>
+          {% comment %} <input type="text" class="form-control" id="zimmedari" name="zimmedari" placeholder="District Naik A'amal"> {% endcomment %}
+          
+          <select id="district" class="form-control">
+            
+            <option>Alaqa Naik Aamal</option>
+            <option>District Naik Aamal</option>
+            <option>Division Naik Aamal</option>
+            <option>State Naik Aamaal</option>
+            <option>Region Naik Aamaal</option>
+          </select>
+        </div>
+    </div>
+
+    <div class="form-row" margin>
+      <div class="form-group margin col-md-12">
+        <label for="division">Division</label>
+        <select id="division" class="form-control" name="division">
+          
+          {% for a in divisions %}
+          <option value="{{a.id}}">{{a}}</option>
+          {% endfor %}
+        </select>
+      </div>
+      <div class="form-group margin col-md-12">
+        <label for="district">District</label>
+        <select id="district" class="form-control" name="district">
+         
+          {% for f in districts %}
+          <option value="{{f.id}}">{{f}}</option>
+          {% endfor %}
+        </select>
+      </div>
+    </div>
+
+    <div class="form-group margin">
+      <label for="alaqa">Alaqa</label>
+      <input type="text" class="form-control" id="alaqa" placeholder="Juhapura" name="alaqa">
+    </div>
+
+    <div class="form-group margin">
+      <label for="taqseem">Naik A'amal Taqseem</label>
+      <input type="number" class="form-control" id="taqseem" name="taqseem" placeholder="1212">
+    </div>
+
+    <div class="form-group margin">
+      <label for="wusool" name="wusool">Naik A'amal Wusool</label>
+      <input type="number" class="form-control" id="wusool" name="wusool" placeholder="1212">
+    </div>
+    
+    <div class="form-group margin">
+      <label for="iaim">Islahe A'amal Ijtima Maqam</label>
+      <input type="number" class="form-control" id="iaim" placeholder="2612" name="iaim">
+    </div>
+
+    <div class="form-group margin">
+      <label for="iais">Islahe A'amal Ijtima Shuraqa</label>
+      <input type="number" class="form-control" id="iais" placeholder="2612" name="iais">
+    </div>
+
+    <div class="form-group margin">
+      <label for="tim">Tahajjud Ijtima Maqam</label>
+      <input type="number" class="form-control" id="tim" placeholder="2612" name="tim">
+    </div>
+
+    <div class="form-group margin">
+      <label for="tis">Tahajjud Ijtima Shuraqa</label>
+      <input type="number" class="form-control" id="tis" placeholder="2612" name="tis">
+    </div>
+
+    <div class="form-group margin">
+      <label for="sim">Sehri Ijtima Maqam</label>
+      <input type="number" class="form-control" id="sim" name="sim" placeholder="2612">
+    </div>
+
+    <div class="form-group margin">
+      <label for="sis">Sehri Ijtima Shuraqa</label>
+      <input type="number" class="form-control" id="sis" placeholder="2612" name="sis">
+    </div>
+
+    <div class="form-group margin">
+      <label for="mea">Mehboob E Attar</label>
+      <input type="number" class="form-control" id="mea" placeholder="2612" name="mea">
+    </div>
+
+    <div class="form-group margin">
+      <label for="yqmm">Yaum E Qufl E Madinah Maqam</label>
+      <input type="number" class="form-control" id="yqmm" placeholder="2612" name="yqmm">
+    </div>
+
+    <div class="form-group margin">
+      <label for="iais">Yaume Qufle Madinah Shuraqa</label>
+      <input type="number" class="form-control" id="yqms" placeholder="2612" name="yqms">
+    </div>
+
+    <div class="form-group margin">
+      <label for="hiram">Haftawar Ijtima Main Aitekaf Maqam</label>
+      <input type="number" class="form-control" id="hiram" placeholder="2612" name="hiram">
+    </div>
+
+    <div class="form-group margin">
+      <label for="hiras">Haftawar Ijtima Main Aitekaf Shuraqa</label>
+      <input type="number" class="form-control" id="hiras" placeholder="2612" name="hiras">
+    </div>
+
+
+
+    <div class="form-group margin">
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" id="gridCheck">
+        <label class="form-check-label" for="gridCheck" required>
+          I accept that above information is correct.
+        </label>
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary margin">Submit</button>
+  </form>
+</div>  
+</section>
+{% endblock submit %}

@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Home{% endblock title %}
+
+{% block main-content %}
+    <!-- Main Start -->
+    <main>
+      <section class="banner">
+        <div class="fistSec">
+          <div class="content">
+            <h1>Majlis Islah E A'amaal</h1>
+          </div>
+          <div class="image">
+            <img src="/static/img/naikAamal.jpg" alt="">
+          </div>
+          
+        </div>
+        <div class="secondSec">
+          <div class="video">
+          <video autoplay id="myVideo" controls>
+            <source src="\static\video\Aazam_bapu.mp4" type="video/mp4">
+          </video>
+        </div>
+
+        </div>
+      </section>
+      <section class="mainn">
+        <div class="container">
+          
+          <div class="buttons">
+
+            <a href="{% url 'submit' %}"><button class="btn btn-success">Submit Karkardai</button></a>
+            <a href="{% url 'view' %}"><button class="btn btn-warning">View Karkardagi</button></a>
+            </div>
+ 
+  
+  
+  
+  
+  
+  
+  
+  
+  
+      </div>
+      </section>
+        
+
+      {% endblock main-content %}
+
+
+     </main>
+   

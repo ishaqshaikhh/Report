@@ -1,0 +1,165 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}View Karkardagi{% endblock title %}
+
+{% block region %}
+<section class="view_karkardagi">
+  <div class="container">
+    <table class="content-table" my-4 margin>
+      <thead>
+        
+        <tr>
+          <th colspan="2"><h3>Total Of {{usr.district.division_namef.state_namef.region_name}} Region</h3> </th>
+          
+        </tr>
+      </thead>
+  
+            <tr>
+                <td><h5>Taqseem</h5></td>
+                <td><h5>{{tq2}}</h5></td>
+    
+            </tr>
+            <tr>
+                <td><h5>Wusool</h5></td>
+                <td><h5>{{ws2}}</h5></td>
+            </tr>
+            
+            <tr>
+                <td><h5>Islahe A'amal Ijtima Maqam</h5></td>
+                <td><h5>{{isim}}</h5></td>
+            </tr>
+            
+            <tr>
+                <td><h5>Islahe A'amal Ijtima Shuraqa</h5></td>
+                <td><h5>{{isis}}</h5></td>
+            </tr>
+            
+            <tr>
+                <td><h5>Tahajjud Ijtima Maqam</h5></td>
+                <td><h5>{{tim}}</h5></td>
+            </tr>
+            <tr>
+                <td><h5>Tahajjud Ijtima Shuraqa</h5></td>
+                <td><h5>{{tis}}</h5></td>
+            </tr>
+            <tr>
+                <td><h5>Sehri Ijtima Maqam</h5></td>
+                <td><h5>{{sim}}</h5></td>
+            </tr>
+            <tr>
+                <td><h5>Sehri Ijtima Shuraqa</h5></td>
+                <td><h5>{{sis}}</h5></td>
+            </tr>
+            <tr>
+                <td><h5>Yaum E Qufle Madinah Maqam</h5></td>
+                <td><h5>{{yqmm}}</h5></td>
+            </tr>
+            <tr>
+                <td><h5>Yaum E Qufle Madinah Shuraqa</h5></td>
+                <td><h5>{{yqms}}</h5></td>
+            </tr>
+            <tr>
+                <td><h5>Haftawar Ijtima Raat Aitekaf Maqam</h5></td>
+                <td><h5>{{hiram}}</h5></td>
+            </tr>
+            <tr>
+                <td><h5>Haftawar Ijtima Raat Aitekaf Shuraqa</h5></td>
+                <td><h5>{{hiras}}</h5></td>
+            </tr>
+            <tr>
+                <td><h5>Mehboob E Attar</h5></td>
+                <td><h5>{{mea}}</h5></td>
+            </tr>
+            {% comment %} <tr>
+            <td>Time of Submission</td>
+            <td><h5>{{f.created_at}}</h5></td>
+            </tr> {% endcomment %}
+          </tbody>
+  
+      </table>
+    
+    <table class="content-table" my-4 margin>
+      <thead>
+        
+        <tr>
+          <th> </th>
+          <th> </th>
+        </tr>
+      </thead>
+      
+        {% for f in m4 %}
+            <tr>
+                <td><h5>State Name</h5></td>
+                <td><h5>{{f.state}}</h5></td>
+            </tr>
+            <tr>
+                <td><h5>Taqseem</h5></td>
+                <td><h5>{{f.taqseem}}</h5></td>
+    
+            </tr>
+            <tr>
+                <td><h5>Wusool</h5></td>
+                <td><h5>{{f.wusool}}</h5></td>
+            </tr>
+            <tr>
+              <td><h5>Islahe A'amal Ijtima Maqam</h5></td>
+              <td><h5>{{f.islaheaamal_ijtima_maqam}}</h5></td>
+          </tr>
+          
+          <tr>
+              <td><h5>Islahe A'amal Ijtima Shuraqa</h5></td>
+              <td><h5>{{f.islaheaamal_ijtima_shuraqa}}</h5></td>
+          </tr>
+          
+          <tr>
+              <td><h5>Tahajjud Ijtima Maqam</h5></td>
+              <td><h5>{{f.tahajjud_ijtima_maqam}}</h5></td>
+          </tr>
+          <tr>
+              <td><h5>Tahajjud Ijtima Shuraqa</h5></td>
+              <td><h5>{{f.tahajjud_ijtima_shuraqa}}</h5></td>
+          </tr>
+          <tr>
+              <td><h5>Sehri Ijtima Maqam</h5></td>
+              <td><h5>{{f.sehri_ijtima_maqam}}</h5></td>
+          </tr>
+          <tr>
+              <td><h5>Sehri Ijtima Shuraqa</h5></td>
+              <td><h5>{{f.sehri_ijtima_shuraqa}}</h5></td>
+          </tr>
+          <tr>
+              <td><h5>Yaum E Qufle Madinah Maqam</h5></td>
+              <td><h5>{{f.yaumequfle_madinah_maqam}}</h5></td>
+          </tr>
+          <tr>
+              <td><h5>Yaum E Qufle Madinah Shuraqa</h5></td>
+              <td><h5>{{f.yaumequfle_madinah_shuraqa}}</h5></td>
+          </tr>
+          <tr>
+              <td><h5>Mehboob E Attar</h5></td>
+              <td><h5>{{f.mehboob_e_attar}}</h5></td>
+          </tr>
+          <tr>
+            <td><h5>Haftawar Ijtima Raat Aitekaf Maqam</h5></td>
+            <td><h5>{{f.haftawar_ijtima_main_raat_guzarne_wale_Shuraqa}}</h5></td>
+        </tr>
+        <tr>
+            <td><h5>Haftawar Ijtima Raat Aitekaf Shuraqa</h5></td>
+            <td><h5>{{f.haftawar_ijtima_main_raat_guzarne_wale_maqam}}</h5></td>
+        </tr>
+            <tr>
+            <td><h5>Time of Submission</h5></td>
+            <td><h5>{{f.created_at}}</h5></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+            </tr>
+          </tbody>
+          {% endfor %}
+      </table>
+    
+  </section>
+  
+
+  {% endblock region %}

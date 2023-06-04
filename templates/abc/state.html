@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}View Karkardagi{% endblock title %}
+
+{% block state %}
+<section class="view_karkardagi">
+<div class="container">
+  <table class="content-table">
+    
+    
+    {% for f in m4 %}
+        <tr>
+            <td>Division Name</td>
+            <td><h5>{{f.division}}</h5></td>
+        </tr>
+        <tr>
+            <td>Taqseem</td>
+            <td><h5>{{f.taqseem}}</h5></td>
+
+        </tr>
+        <tr>
+            <td>Wusool</td>
+            <td><h5>{{f.wusool}}</h5></td>
+        </tr>
+        <td>Time of Submission</td>
+        <td><h5>{{f.created_at}}</h5></td>
+        {% endfor %}
+    </tbody>
+  </table>
+</section>
+
+
+
+
+  {% endblock state %}

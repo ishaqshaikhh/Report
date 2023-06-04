@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}View Karkardagi{% endblock title %}
+
+{% block view %}
+<section class="view_karkardagi">
+<div class="container">
+  <table class="content-table">
+    <thead>
+      
+      <tr>
+        <th>Name of Zimmedar</th>
+        <th>State Name</th>
+        <th>Division Name</th>
+        <th>District Name</th>
+        <th>Taqseem</th>
+        <th>Wusool</th>
+        <th>Time of Submission</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for f in m1 %}
+      <tr>
+
+          <td><h5>{{f.zimmedar_name}}</h5></td>
+          <td><h5>{{f.state.state_name}}</h5></td>
+          <br>
+          <td><h5>{{f.division.division_name}}</h5></td>
+          <br>
+          <td><h5>{{f.district}}</h5></td>
+          <br>
+          <td><h5>{{f.taqseem}}</h5></td>
+          <br>
+          <td><h5>{{f.wusool}}</h5></td>
+          <td><h5>{{f.created_at}}</h5></td>
+        </tr>
+        {% endfor %}
+        
+      
+    </tbody>
+  </table>
+
+</section>
+
+
+
+
+  {% endblock view %}

@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Add User{% endblock title %}
+
+{% block register %}
+<div class="register">
+    <div class="container">
+        <form method="POST" action="/userAdded/">
+          {% csrf_token %}
+
+          <div class="form-row">
+            <div class="form-group margin col-md-12">
+              <label for="username" class="form-label">Enter Username</label>
+              <input type="text" class="form-control" name="username" id="username">
+             </div>
+            <div class="margin form-group col-md-12">
+              <label for="exampleInputPassword1" class="form-label">Password</label>
+              <input type="password" name="password" id="password" aria-controls="" class="form-control">
+              <input type="checkbox" onclick="myFunction()"> &nbsp;Show Password
+            </div>
+        </div>
+    
+        <div class="form-row" margin>
+          <div class="form-group margin col-md-12">
+            <label for="zimmedari">Your Zimmedari</label>
+            <select name="zimmedari" id="zimmedari">
+             {% for i in zm %}
+              <option value="{{i.zimmedari_name}}">{{i.zimmedari_name}}</option>
+             {% endfor %}
+            </select>
+            
+
+          </div>
+          <div class="form-group margin col-md-12">
+            <label for="district">District</label>
+            <select id="district" class="form-control" name="district">
+             
+              {% for f in districts %}
+              <option value="{{f.id}}">{{f}}</option>
+              {% endfor %}
+            </select>
+          </div>
+        </div>
+    
+        <div class="form-group margin">
+          <label for="alaqa">Enter Alaqa:</label>
+          <input type="text" class="form-control" id="alaqa" placeholder="Juhapura" name="alaqa">
+        </div>
+    
+        <div class="form-group margin">
+          <label for="taqseem">Zehli Halqa</label>
+          <input type="text" class="form-control" id="zehliHalqa" name="zehliHalqa" placeholder="chowk">
+        </div>
+    
+          <button type="submit" class="btn btn-primary">Add User</button>
+          </form>
+    </div>
+</div> 
+
+{% endblock register %}
+
